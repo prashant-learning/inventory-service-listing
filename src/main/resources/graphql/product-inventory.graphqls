@@ -1,0 +1,42 @@
+
+type Product{
+    productId: ID!,
+    productName: String!,
+    manufacturedBy: String,
+    markedBy: String,
+    price: Float,
+    discount: Int,
+    soldBy: String,
+    feature: String,
+    description: String,
+    specification: String,
+    imageUrl: String,
+    reviews: Float,
+    customerFeedback: String
+}
+
+type Query {
+    getProducts: [Product!]!
+    getProductById(productId: Int): Product!
+}
+
+type Mutation {
+    createProduct(productInput:ProductInput):Product,
+    deleteProduct(productId: Int): Product!
+}
+
+input ProductInput {
+    productId: Int!,
+    productName: String!,
+    manufacturedBy: String,
+    markedBy: String,
+    price: Float,
+    discount: Int,
+    soldBy: String,
+    feature: String,
+    description: String,
+    specification: String,
+    imageUrl: String,
+    reviews: Float,
+    customerFeedback: String
+}
